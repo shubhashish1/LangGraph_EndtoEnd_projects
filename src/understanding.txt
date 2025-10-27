@@ -1,0 +1,5 @@
+1. TO use the src folder as package and call it in different files we need __init__.py. In this was the src becomes
+   a package and can be used as a package.
+2. The same goes for the langgraphagenticai folder.
+3. For LLMS and graph folders also we will have the same __init__.py so that we can import them as packages
+   like from src.LLMS etc.

@@ -55,4 +55,4 @@ class GraphBuilder:
         """Calls the specific graph for selected usecase"""
         if usecase == "Basic Chatbot":
             self.basic_chatbot_build_graph()
-        self.graph_builder.compile()
+        return self.graph_builder.compile()

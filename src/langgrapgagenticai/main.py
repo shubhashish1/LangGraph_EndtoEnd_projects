@@ -3,6 +3,9 @@ import json
 from src.langgrapgagenticai.ui.streamlitui.loadui import LoadStreamlitUI
 from src.langgrapgagenticai.LLMS.groqllm import GROQLLM
 from src.langgrapgagenticai.graph.graph_builder import GraphBuilder
+from src.langgrapgagenticai.ui.streamlitui.display_result import DisplayResultStreamlit
+
+from IPython.display import display, Image
 
 # Now let's load the ui elements written in loadui and then also add the chat_input option to make it conversational
 
@@ -45,7 +48,10 @@ def load_langgraph_agenticai_app():
             # Now once we have the model, then we will have the langgraph and we need to call it and pass our model
             # to load the exact graph for the desired usecase and then provide response
             graph_builder = GraphBuilder(model)
-            graph_builder.setup_graph()
+            graph = graph_builder.setup_graph(usecase)
+            print(display(Image(graph.get_graph().draw_mermaid_png())))
+            DisplayResultStreamlit(usecase, graph, user_message).display_result_on_ui()
+            # display_result.display_result_on_ui()
             
         except Exception as e:
             raise e

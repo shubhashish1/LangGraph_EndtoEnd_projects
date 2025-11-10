@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync_to_hub:
-     runs_on: ubuntu-latest
+  sync-to-hub:
+     runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3 # This is going to fetch all the latest libraries needed to run github action
          with:

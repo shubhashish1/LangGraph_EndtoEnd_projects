@@ -3,7 +3,8 @@ on:
   push: 
     branches: [main]
 
-    # TO run this workflow we can have this job where we will specify the details:
+  # TO run this workflow we can have this job where we will specify the details:
+  workflow_dispatch:
 
 jobs:
   sync_to_hub:

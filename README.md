@@ -1,6 +1,7 @@
 ### End To End Langgraph Projects
 
 
+---
 title: SimpleAgenticAIChatBot
 emoji: 🐨
 colorFrom: blue
@@ -10,3 +11,4 @@ sdk_version:
 app_file: app.py
 pinned: false
 license: apache-2.0
+---

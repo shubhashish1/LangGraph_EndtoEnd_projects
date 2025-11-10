@@ -10,14 +10,14 @@ jobs:
   sync_to_hub:
      runs_on: ubuntu-latest
      steps:
-      - uses: actions/checkout@v3 # This is going to fetch all the latest libraries needed to run github action
-      with:
-        fetch-depth: 0
-        lfs: false
+       - uses: actions/checkout@v3 # This is going to fetch all the latest libraries needed to run github action
+         with:
+          fetch-depth: 0
+          lfs: false
 
-      - name: Push to Space
-        env:
-         HF_TOKEN: ${{ secrets.HF_TOKEN }} # This represents the config from huggingface side like id, pwd, project etc
-        run: git push --force https://ShubhashishMishra:$HF_TOKEN@huggingface.co/spaces/ShubhashishMishra/SimpleAgenticAIChatBot main
+       - name: Push to Space
+         env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }} # This represents the config from huggingface side like id, pwd, project etc
+         run: git push --force https://ShubhashishMishra:$HF_TOKEN@huggingface.co/spaces/ShubhashishMishra/SimpleAgenticAIChatBot main
 
 # This will run the deployment

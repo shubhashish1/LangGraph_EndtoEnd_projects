@@ -18,3 +18,5 @@ jobs:
         env:
          HF_TOKEN: ${{ secrets.HF_TOKEN }} # This represents the config from huggingface side like id, pwd, project etc
         run: git push --force https://ShubhashishMishra:$HF_TOKEN@huggingface.co/spaces/ShubhashishMishra/SimpleAgenticAIChatBot main
+
+# This will run the deployment

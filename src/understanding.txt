@@ -3,3 +3,18 @@
 2. The same goes for the langgraphagenticai folder.
 3. For LLMS and graph folders also we will have the same __init__.py so that we can import them as packages
    like from src.LLMS etc.
+
+
+DEPLOYMENT TO HUGGINGFACE:
+
+1. To deploy our application in huggingface we need to first signin and go to spaces.
+2. Here huggingface provides a server to deploy our small scale application with min config.
+3. Click on New Space to create a space to deploy the application.
+4. Fill in the details and we will select the empty template as streamlit template is not listed.
+5. Once we create the space it will show us the fils and we can put our files from git here or do an automated
+   linking to our git repo to be able to generate the output.
+6. Now from our github repo we can create a github action to build automated pipeline to deploy the application
+   in huggingface space we have.
+7. Now let's go to the code repo in our local and create a folder named .github and then insode that another folder workflows.
+8. Now let's have a file named main.yml
+9. huggingface with taken key should be generated permission: Write

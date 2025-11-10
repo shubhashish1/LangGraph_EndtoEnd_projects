@@ -1,6 +1,3 @@
-### End To End Langgraph Projects
-
-
 ---
 title: SimpleAgenticAIChatBot
 emoji: 🐨
@@ -12,3 +9,5 @@ app_file: app.py
 pinned: false
 license: apache-2.0
 ---
+
+### End To End Langgraph Projects

@@ -27,7 +27,7 @@ class DisplayResultStreamlit:
             for event in graph.stream({"messages": ("user", user_message)}): # Here we are streaming first the query asked by user
                 print(f"Printing event: {event.values()}")
                 for value in event.values(): # Here event.values() is ("user", user_message) and value is user_message
-                    print(f"Printing value from event.values() {value["messages"]}")
+                    print(f'Printing value from event.values() {value["messages"]}')
                     with st.chat_message("user"):
                         st.write(user_message)
                     with st.chat_message("assistant"):

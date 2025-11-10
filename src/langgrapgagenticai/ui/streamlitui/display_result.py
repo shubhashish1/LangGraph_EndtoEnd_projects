@@ -31,5 +31,5 @@ class DisplayResultStreamlit:
                     with st.chat_message("user"):
                         st.write(user_message)
                     with st.chat_message("assistant"):
-                        print(f"The response is: {value["messages"].content}")
+                        print(f'The response is: {value["messages"].content}')
                         st.write(value["messages"].content)

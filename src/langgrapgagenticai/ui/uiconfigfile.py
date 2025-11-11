@@ -14,14 +14,14 @@ class Config:
         # In the uiconfigfile.ini DEFAULT is the root directory to access all the elements
         # Here we are using .split(",") to split this field by comma in case we have more than one entry such as 
         # groq, openai etc.
-        return self.config['DEFAULT'].get('LLM_OPTION').split(", ")
+        return self.config["DEFAULT"].get("LLM_OPTIONS").split(", ")
     
     def get_usecase_options(self):
-        return self.config['DEFAULT'].get('USECASE_OPTIONS').split(", ")
+        return self.config["DEFAULT"].get("USECASE_OPTIONS").split(", ")
     
     def get_groq_model_options(self):
-        return self.config['DEFAULT'].get('GROQ_MODEL_OPTIONS').split(", ")
+        return self.config["DEFAULT"].get("GROQ_MODEL_OPTIONS").split(", ")
     
     def get_page_title(self):
         # Here page title can be only one, hence no split by comma
-        return self.config['DEFAULT'].get('PAGE_TITLE')
+        return self.config["DEFAULT"].get("PAGE_TITLE")

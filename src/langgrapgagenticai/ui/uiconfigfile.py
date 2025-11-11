@@ -5,10 +5,8 @@
 from configparser import ConfigParser
 
 class Config:
-
-    def __init__(self, config_file="./src/langgraphagenticai/ui/uiconfigfile.ini"):
-        
-        self.config = ConfigParser()
+    def __init__(self,config_file="./src/langgraphagenticai/ui/uiconfigfile.ini"):
+        self.config=ConfigParser()
         self.config.read(config_file) # Reading the config file elements using ConfigParser
 
     # Now let's read one by one element. First let's go with llm option reading

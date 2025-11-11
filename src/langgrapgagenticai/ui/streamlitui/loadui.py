@@ -49,7 +49,7 @@ class LoadStreamlitUI:
     def load_streamlit_ui(self):
         # We have to get the page title from the config file 
         # Hence we need to set the page_config from which we will get the page title to display
-
+        
         st.set_page_config(page_icon="robot", page_title=self.config.get_page_title(), layout= "wide")
         # Now once this is set we have to put the header to display
         st.header(f"🤖🧠🇦🇮👾 {self.config.get_page_title()}")

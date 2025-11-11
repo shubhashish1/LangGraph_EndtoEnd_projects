@@ -6,7 +6,7 @@ from configparser import ConfigParser
 import os
 
 class Config:
-    def __init__(self,config_file="src\\langgrapgagenticai\\ui\\uiconfigfile.ini"):
+    def __init__(self,config_file="./src/langgrapgagenticai/ui/uiconfigfile.ini"):
         self.config=ConfigParser()
         self.config.read(config_file) # Reading the config file elements using ConfigParser
 

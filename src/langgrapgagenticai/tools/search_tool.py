@@ -24,4 +24,4 @@ def create_tool_node(tools):
     """
     Creates and returns a toolnode for the graph
     """
-    return ToolNode[tools]
+    return ToolNode(tools=tools)

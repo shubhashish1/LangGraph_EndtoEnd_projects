@@ -27,4 +27,21 @@ class ChatbotWithToolNode:
     # Now as we have now the user query we need to get the response from toolnode
     # by binding the toolnode to llm
     def create_chatbot(self, tools):
-        pass
+        # Here we will be wrting the code to bind the tools to llm so that llm can use it
+        # whenever we have tool call
+        """
+        Returns a chatbot node function
+        """
+        llm_with_tools = self.llm.bind_tools(tools)
+
+        def chatbot_node(state: State):
+            """
+            Chatbot logic for processing the input state and returning a response
+            """
+            return {"messages": [llm_with_tools.invoke(state["messages"])]}
+            # Here we are returning the output of llm_with_tools by taking the user message
+            # from state["messages"]
+        return chatbot_node
+    
+    # Now with this our toolnode creation process is done. Next we will go to the graphBuilder.
+    # to add the node and edge to the graph

@@ -33,3 +33,19 @@ class DisplayResultStreamlit:
                     with st.chat_message("assistant"):
                         print(f'The response is: {value["messages"].content}')
                         st.write(value["messages"].content)
+        if usecase == "Chatbot with Tool":
+            initial_state = {"messages": [user_message]}
+            response = graph.invoke(initial_state)
+            for message in response["messages"]:
+                if type(message) == HumanMessage:
+                    with st.chat_message("user"):
+                        st.write(message.content)
+
+                elif type(message) == ToolMessage:
+                    with st.chat_message("ai"):
+                        st.write("Tool call started")
+                        st.write(message.content)
+                        st.write("Tool call ended")
+                elif type(message)==AIMessage and message.content: # Here if message type is AIMessage and the message has content then only proceed
+                    with st.chat_message("assistant"):
+                        st.write(message.content)

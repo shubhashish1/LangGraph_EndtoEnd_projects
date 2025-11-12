@@ -86,6 +86,15 @@ class LoadStreamlitUI:
             # Let's do the usecase selection now from the select box
             self.user_controls["selected_usecase"] = st.selectbox("Select Usecase", usecase_options)
 
+            # Now since we have more than one usecase, we will have to provide condition if a usecase
+            # is selected then we need to cal it's graph, if b is selected call b graph
+            if self.user_controls["selected_usecase"] == "Chatbot with Tool":
+                # Now we have to enable the tavily api key input for the user here
+                os.environ["TAVILY_API_KEY"] = self.user_controls["TAVILY_API_KEY"] = st.session_state["TAVILY_API_KEY"] = st.text_input("TAVILY_API_KEY",
+                                                                                                                                         type="password")
+                if not self.user_controls["TAVILY_API_KEY"]:
+                    st.warning("⚠️ Please enter your TAVILY_API_KEY to porceed")
+
             # Now let's check if we have the session state present or not else we will create
             if "state" not in st.session_state:
                 st.session_state.state = self.initialize_session() # Here we are adding state to the session_state

@@ -85,7 +85,8 @@ class GraphBuilder:
         # tools_condition default function given by langgraph
         # If the latest message(result) from assistant is tool call then tools_condition routes to tools
         # If the latest message(result) from assistant is not a tool call then tools_condition routes to END
-        self.graph_builder.add_edge("tools", END)
+        self.graph_builder.add_edge("tools", "chatbot")
+        self.graph_builder.add_edge("chatbot", END)
 
     def setup_graph(self, usecase: str):
         """Calls the specific graph for selected usecase"""
